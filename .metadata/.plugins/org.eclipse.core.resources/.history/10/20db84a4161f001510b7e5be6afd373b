@@ -18,9 +18,9 @@ public class IssueCollector {
  
  static JerseyJiraRestClientFactory factory = new JerseyJiraRestClientFactory();
  static NullProgressMonitor pm = new NullProgressMonitor();
- static String uri="http://jira.intel.hpdd.com";
- static String user="Junior Hu";
- static String pwd="wo2hujie";
+ static String uri="http://localhost:8100";
+ static String user="gfjira";
+ static String pwd="123456";
  /**
  * @param args
  */
