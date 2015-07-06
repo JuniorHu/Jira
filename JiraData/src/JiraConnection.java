@@ -7,24 +7,24 @@ import com.atlassian.jira.rest.client.JiraRestClientFactory;
 //import com.atlassian.jira.rest.client.domain.BasicIssue;
 //import com.atlassian.jira.rest.client.domain.BasicProject;
 //import com.atlassian.jira.rest.client.domain.Issue;
-//import com.atlassian.jira.rest.client.domain.User;
+import com.atlassian.jira.rest.client.domain.User;
 //import com.atlassian.jira.rest.client.domain.input.FieldInput;
 //import com.atlassian.jira.rest.client.domain.input.IssueInput;
 //import com.atlassian.jira.rest.client.domain.input.IssueInputBuilder;
-//import com.atlassian.jira.rest.client.internal.async.AsynchronousJiraRestClientFactory;
+import com.atlassian.jira.rest.client.internal.async.AsynchronousJiraRestClientFactory;
 import com.atlassian.util.concurrent.Promise;
 
 public class JiraConnection {
-private boolean initSuccess = false;
-private static String user="Junior Hu";
-private static String pwd="wo2hujie";
-public static void main(String[] args){
+private static boolean initSuccess = false;
+private static String user="nfs";
+private static String pwd="nfs";
+public static void JC(String[] ){
 	try{
 		    JiraRestClientFactory factory = new AsynchronousJiraRestClientFactory();
-			URI jiraServerUri = new URI("https://jira.hpdd.intel.com");
+			URI jiraServerUri = new URI("https://192.168.12.35:8080");
 			
 			JiraRestClient restClient = factory.createWithBasicHttpAuthentication(jiraServerUri, user,pwd);
-	       initSuccess = true;
+	        initSuccess = true;
 	        System.out.println("Create sucess");
 		}catch(Exception ex){
 			initSuccess = false;
@@ -33,3 +33,4 @@ public static void main(String[] args){
 	}
 
 }
+

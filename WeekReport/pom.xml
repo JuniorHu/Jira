@@ -1,0 +1,358 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nfs</groupId>
+  <artifactId>WeekReport</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>WeekReport</name>
+  <url>http://maven.apache.org</url>
+  
+  <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+  
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+        <repository>
+            <id>atlassian.com</id>
+            <name>Atlassian</name>
+            <url>http://maven.atlassian.com/public</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+            <!-- SLF4J is distributed under the MIT license. The MIT license is known to be compatible with the Apache 2.0 license. -->
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.4</version>
+    </dependency>
+    
+    <dependency>
+            <!-- JRJC is distributed under the Apache 2.0 license. -->
+            <groupId>com.atlassian.jira</groupId>
+            <artifactId>jira-rest-java-client</artifactId>
+            <version>2.0.0-m2</version>
+            <exclusions>
+                <exclusion>
+                    <!--
+                     Not excluding this will pull in both stax:stax-api:1.0.1 and javax.xml.stream:stax-api:1.0.2
+                     as transitive dependencies. We don't want both, and not excluding this will give you a duplicate
+                     warning when the dependencies are shaded into the jar by the maven-shade-plugin
+                      -->
+                    <groupId>stax</groupId>
+                    <artifactId>stax-api</artifactId>
+                </exclusion>
+            </exclusions>
+     </dependency>
+     
+
+
+
+<!-- <dependency>
+
+<groupId>commons-dbcp</groupId>
+
+<artifactId>commons-dbcp</artifactId>
+
+<version>20030825.184428<ersion>
+
+</dependency> -->
+
+                       
+<dependency>
+
+<groupId>org.mybatis</groupId>
+
+<artifactId>mybatis</artifactId>
+
+<version>3.2.2</version>
+
+</dependency>
+
+
+                        
+
+            
+
+<dependency>
+
+<groupId>org.mybatis</groupId>
+
+<artifactId>mybatis-spring</artifactId>
+
+<version>1.2.0</version>
+
+</dependency>
+
+            
+
+        
+
+<dependency>
+
+    <groupId>org.postgresql</groupId>
+
+    <artifactId>postgresql</artifactId>
+
+    <version>9.2-1003-jdbc4</version>
+
+</dependency>
+
+                                                        
+
+<dependency>
+
+<groupId>commons-dbcp</groupId>
+
+<artifactId>commons-dbcp</artifactId>
+
+<version>1.2.2</version>
+
+</dependency>
+
+                        
+
+
+
+<dependency>
+
+<groupId>commons-httpclient</groupId>
+
+<artifactId>commons-httpclient</artifactId>
+
+<version>3.1</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>com.sun.jersey</groupId>
+
+<artifactId>jersey-json</artifactId>
+
+<version>1.5</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>com.sun.jersey</groupId>
+
+<artifactId>jersey-client</artifactId>
+
+<version>1.6-ea06</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.codehaus.jettison</groupId>
+
+<artifactId>jettison</artifactId>
+
+<version>1.2</version>
+
+</dependency>
+
+
+
+<dependency>
+
+<groupId>com.sun.jersey.contribs</groupId>
+
+<artifactId>jersey-apache-client</artifactId>
+
+<version>1.6</version>
+
+</dependency>
+
+
+
+
+
+<dependency>
+
+<groupId>joda-time</groupId>
+
+<artifactId>joda-time</artifactId>
+
+<version>1.6</version>
+
+</dependency>
+
+
+
+
+
+<dependency>
+
+<groupId>com.google.guava</groupId>
+
+<artifactId>guava</artifactId>
+
+<version>11.0</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.jboss.resteasy</groupId>
+
+<artifactId>resteasy-jaxrs</artifactId>
+
+<version>2.2.1.GA</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.jboss.resteasy</groupId>
+
+<artifactId>resteasy-jackson-provider</artifactId>
+
+<version>2.2.1.GA</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.apache.axis2</groupId>
+
+<artifactId>axis2</artifactId>
+
+<version>1.4</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>axis</groupId>
+
+<artifactId>axis-jaxrpc</artifactId>
+
+<version>1.2</version>
+
+</dependency>
+
+<dependency>
+
+<groupId>org.apache.axis</groupId>
+
+<artifactId>axis</artifactId>
+
+<version>1.4</version>
+
+</dependency>
+
+<dependency>
+
+<groupId>com.sun.xml.rpc</groupId>
+
+<artifactId>jaxrpc-impl</artifactId>
+
+<version>1.1.3_01</version>
+
+</dependency>
+
+<dependency>
+
+<groupId>commons-discovery</groupId>
+
+<artifactId>commons-discovery</artifactId>
+
+<version>0.2</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>wsdl4j</groupId>
+
+<artifactId>wsdl4j</artifactId>
+
+<version>1.6.2</version>
+</dependency>
+
+
+<dependency>
+
+<!-- jsoup HTML parser library @ http://jsoup.org/ -->
+
+<groupId>org.jsoup</groupId>
+
+<artifactId>jsoup</artifactId>
+
+<version>1.7.2</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>javax.servlet</groupId>
+
+<artifactId>servlet-api</artifactId>
+
+<version>2.5</version>
+
+<scope>provided</scope>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.apache.struts</groupId>
+
+<artifactId>struts2-core</artifactId>
+
+<version>2.0.11</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>log4j</groupId>
+
+<artifactId>log4j</artifactId>
+
+<version>1.2.9</version>
+
+</dependency>
+     
+  </dependencies>
+</project>
