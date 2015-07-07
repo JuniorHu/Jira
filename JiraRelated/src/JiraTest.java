@@ -3,7 +3,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
 import sun.misc.BASE64Encoder;
 
 public class JiraTest {
@@ -21,13 +20,15 @@ public class JiraTest {
 		// String encoding =Base64.
 		String id = "nfs:nfs";
 		String encoding = base64.encode(id.getBytes());
-		String url_string = url_pre + "api/2/search?jql=project='TEST'&startAt=0&maxResults=1&fields=issuetype&fields=created"
+		String url_string = url_pre
+				+ "api/2/search?jql=project='TEST'&startAt=0&maxResults=1&fields=issuetype&fields=created"
 				+ "&fields=description&fields=reporter&fields=creator&fields=assignee&fields=status";
-		//String url_string = url_pre + "api/2/search?jql=project='TEST'&startAt=0&maxResults=1";
-		//System.out.println(url_string);
-		//HttpClient httpClient = new DefaultHttpClient();
+		// String url_string = url_pre +
+		// "api/2/search?jql=project='TEST'&startAt=0&maxResults=1";
+		// System.out.println(url_string);
+		// HttpClient httpClient = new DefaultHttpClient();
 		try {
-	
+
 			URL url = new URL(url_string);
 			HttpURLConnection connection = (HttpURLConnection) url
 					.openConnection();
@@ -54,6 +55,7 @@ public class JiraTest {
 	/**
 	 * @param args
 	 */
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
