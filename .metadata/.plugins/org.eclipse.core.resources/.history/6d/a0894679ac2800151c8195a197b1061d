@@ -1,0 +1,30 @@
+package org.se.db.util;
+
+public class dbTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String url="jdbc:mysql://127.0.0.1:3306/hujuntest";
+		String user="root";
+		String pwd="hj123456";
+		MySQLUtil my = new MySQLUtil(url,user,pwd);
+		my.createConn();
+		String tbName="issue";
+		String sql="";
+		String ikey="TEST-8,";
+		String ityp="BUG,";
+		String ides="Test for JIRA,";
+		String idate="2015.7.12,";
+		String icre="jun hu,";
+		String iass="Jie Hu,";
+		String istu="open";
+		
+		sql+="insert into "+tbName+" values"+"("+ikey+ityp+ides+idate+icre+iass+istu+")";
+		System.out.println(sql);
+		
+		my.closeDB();
+		
+
+	}
+
+}

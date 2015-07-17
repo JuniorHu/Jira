@@ -1,0 +1,17 @@
+package org.se.db.util;
+
+public class dbTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String url="127.0.0.1:3306";
+		String user="root";
+		String pwd="hj123456";
+		MySQLUtil my = new MySQLUtil(url,user,pwd);
+		my.createConn();
+		my.closeDB();
+		
+
+	}
+
+}
