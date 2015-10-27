@@ -71,7 +71,7 @@ public class FileOperations {
   FileOutputStream o=null;  
   try {  
    o = new FileOutputStream(fileName);  
-      o.write(content.getBytes("GBK"));  
+      o.write(content.getBytes("utf-8"));  
       o.close();  
 //   mm=new RandomAccessFile(fileName,"rw");  
 //   mm.writeBytes(content);  
@@ -95,7 +95,7 @@ public class FileOperations {
         try {  
             File f = new File(filePath);  
             if (f.exists()) {  
-                System.out.print("file has been exist");  
+                //System.out.print("file has been exist");  
             } else {  
                 System.out.print("file does not exist");  
                 f.createNewFile();// 不存在则创建  
@@ -105,7 +105,7 @@ public class FileOperations {
             while ((str = input.readLine()) != null) {  
                 s1 += str + "\n";  
             }  
-            System.out.println(s1);  
+            //System.out.println(s1);  
             input.close();  
             s1 += content;  
   

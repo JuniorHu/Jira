@@ -1,0 +1,5 @@
+package org.itechs.platform.gitutil;
+
+public class GitDiff {
+
+}
